@@ -1,0 +1,558 @@
+@import "null.scss";
+@import "mixin.scss";
+
+body.lock {
+   overflow: hidden;
+}
+
+.header {
+   min-height: 100vh;
+   background: url("../../img/header/header_bg.png") no-repeat top center / cover;
+   &__content {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include adaptive_padding_top(60, 30);
+   }
+
+   &__logo {
+   }
+   &__logo a {
+      color: #ffffff;
+      font-family: "Proxima Nova T - Thin";
+      @include adaptive_font(31, 24);
+      font-weight: 400;
+      transition: all 0.5s ease 0s;
+   }
+   &__logo a:hover {
+      opacity: 0.5;
+      transition: all 0.5s ease 0s;
+   }
+
+   &__menu {
+   }
+
+   &__list {
+      display: flex;
+      @media (max-width: 650px) {
+         display: block;
+      }
+   }
+   &__list li {
+      @include adaptive_padding_right(50, 20);
+      @media (max-width: 650px) {
+         padding-right: 0px;
+         @include adaptive_padding_bottom(40, 30);
+      }
+   }
+   &__list li:last-child {
+      padding: 0px;
+   }
+
+   &__link {
+      color: #ffffff;
+      font-family: "Proxima Nova A";
+      @include adaptive_font(16, 14);
+      font-weight: 400;
+      @media (max-width: 650px) {
+         @include adaptive_font(40, 30);
+      }
+      transition: all 0.5s ease 0s;
+   }
+
+   &__link:hover {
+      opacity: 0.5;
+      transition: all 0.5s ease 0s;
+   }
+
+   &__bottom {
+      flex: 1 0 auto;
+      display: flex;
+      align-items: center;
+      text-align: center;
+   }
+
+   &__body {
+      max-width: 700px;
+      margin: 0 auto;
+   }
+
+   &__title {
+      color: #ffffff;
+      font-family: "Proxima Nova T - Thin";
+      @include adaptive_font(60, 25);
+      font-weight: 400;
+      text-transform: uppercase;
+      @include adaptive_padding_bottom(50, 25);
+      @media (min-width: 1350px) {
+         font-size: 66.8018px;
+      }
+   }
+
+   &__text {
+      color: #ffffff;
+      font-family: "Proxima Nova A";
+      @include adaptive_font(18, 14);
+      font-weight: 400;
+      @include adaptive_line_height(32, 14);
+   }
+   &__burger {
+      display: none;
+      z-index: 3;
+      @media (max-width: 650px) {
+         display: block;
+         position: relative;
+         width: 30px;
+         height: 20px;
+      }
+   }
+   &__burger:before,
+   &__burger:after,
+   &__burger span {
+      @media (max-width: 650px) {
+         content: "";
+         background-color: #fff;
+         position: absolute;
+         width: 100%;
+         height: 2px;
+         left: 0;
+         transition: all 0.3s ease 0s;
+      }
+   }
+   &__burger:before {
+      top: 0;
+   }
+   &__burger:after {
+      bottom: 0;
+   }
+   &__burger span {
+      top: 9px;
+   }
+
+   &__menu {
+      @media (max-width: 650px) {
+         position: fixed;
+         top: -100%;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba($color: #1d2432, $alpha: 0.9);
+         padding: 80px 0px 20px 20px;
+         transition: all 0.5s ease 0s;
+         overflow: auto;
+      }
+   }
+   &__burger.active:before {
+      @media (max-width: 650px) {
+         transform: rotate(45deg);
+         top: 9px;
+      }
+   }
+   &__burger.active:after {
+      @media (max-width: 650px) {
+         transform: rotate(-45deg);
+         bottom: 9px;
+      }
+   }
+   &__burger.active span {
+      @media (max-width: 650px) {
+         transform: scale(0);
+         transition: all 0.3s ease 0s;
+      }
+   }
+   &__menu.active {
+      top: 0;
+   }
+}
+.container {
+   max-width: 1130px;
+   margin: 0 auto;
+   padding: 0 15px;
+}
+
+.about {
+   background: #962323;
+   &__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include adaptive_padding_top(120, 60);
+      @include adaptive_padding_bottom(120, 60);
+      @media (max-width: 930px) {
+         flex-direction: column;
+      }
+   }
+
+   &__img {
+      @include adaptive_width(445, 250);
+      @include adaptive_height(400, 170);
+      @media (max-width: 930px) {
+         @include adaptive_padding_bottom(40, 20);
+      }
+   }
+   &__img img {
+      width: 100%;
+      height: 100%;
+   }
+
+   &__content {
+   }
+
+   &__title {
+   }
+
+   &__line {
+   }
+   &__line hr {
+      width: 108px;
+      height: 2px;
+      background-color: #ffffff;
+   }
+
+   &__text {
+   }
+}
+.container {
+}
+
+.title {
+   max-width: 500px;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   &__title {
+      color: #ffffff;
+      font-family: "Forever Brush Script";
+      @include adaptive_font(56, 40);
+      font-weight: 400;
+   }
+
+   &__line {
+      @include adaptive_padding_top(20, 10);
+      @include adaptive_padding_bottom(40, 20);
+   }
+
+   &__text {
+      color: #ffffff;
+      font-family: "Proxima Nova A";
+      @include adaptive_font(18, 14);
+      font-weight: 400;
+   }
+}
+
+.signatures {
+   background: url("../../img/signatures/signatures_bg.png") no-repeat top center / cover;
+   &__content {
+      @include adaptive_padding_top(120, 60);
+      @include adaptive_padding_bottom(120, 60);
+      margin: 0px auto;
+   }
+
+   &__title {
+   }
+
+   &__line {
+   }
+   &__line hr {
+      width: 108px;
+      height: 2px;
+      background-color: #c8235d;
+   }
+
+   &__text {
+   }
+}
+.container {
+}
+.title {
+   &__title {
+   }
+
+   &__line {
+   }
+
+   &__text {
+   }
+}
+
+.menu {
+   &__row {
+      display: flex;
+      justify-content: space-between;
+      @include adaptive_padding_bottom(120, 60);
+      @media (max-width: 1000px) {
+         flex-direction: column;
+      }
+   }
+   &__title {
+      color: #000;
+   }
+   &__cont {
+      margin: 0px auto;
+      @include adaptive_padding_top(120, 60);
+      @include adaptive_padding_bottom(120, 60);
+   }
+
+   &__line {
+   }
+   &__line hr {
+      width: 108px;
+      height: 2px;
+      background-color: #c8235d;
+   }
+
+   &__item {
+      padding: 0px 95px;
+
+      @media (max-width: 600px) {
+         padding: 0px;
+      }
+   }
+   &__item:first-child {
+      @media (max-width: 1000px) {
+         @include adaptive_padding_bottom(60, 25);
+      }
+   }
+}
+.container {
+}
+.title {
+   &__title {
+   }
+
+   &__line {
+   }
+}
+.item-menu {
+   display: flex;
+   flex-direction: column;
+   @include adaptive_padding_bottom(60, 25);
+   &__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      @include adaptive_padding_bottom(28, 20);
+   }
+
+   &__name,
+   &__price {
+      color: #0b0c0d;
+      font-family: "Proxima Nova A";
+      @include adaptive_font(16, 14);
+      font-weight: 400;
+      text-transform: uppercase;
+   }
+
+   &__price {
+      color: #c8235d;
+   }
+
+   &__text {
+      @include adaptive_font(16, 14);
+      opacity: 0.7;
+      color: #0b0c0d;
+      font-family: "Proxima Nova A";
+      font-weight: 400;
+   }
+}
+.item-menu:last-child {
+   padding: 0px;
+}
+
+.swiper-slide {
+}
+.slider {
+   background: #14161b;
+   &__row {
+      display: flex;
+      @media (max-width: 767px){
+         flex-wrap: wrap;
+         justify-content: center;
+      }
+   }
+   &__body{
+      flex: 0 0 33.333%;
+      @media (max-width: 767px){
+         flex: 0 0 50%;
+      }
+      @media (max-width: 600px){
+         flex: 0 0 100%;
+      }
+   }
+   &__body img{
+      width: 100%;
+      height: 100%;
+   }
+}
+
+.restaurant {
+   background: #25262a;
+   &__row {
+      display: flex;
+      justify-content: space-between;
+      @include adaptive_padding_top(90, 40);
+      @include adaptive_padding_bottom(85, 35);
+      @media (max-width: 767px) {
+         flex-wrap: wrap;
+      }
+      @media (max-width: 458px) {
+         flex-direction: column;
+      }
+   }
+
+   &__item {
+      display: flex;
+      flex-direction: column;
+      @media (max-width: 767px) {
+         @include adaptive_padding_right(30, 15);
+         text-align: center;
+      }
+      @media (max-width: 458px) {
+         padding-right: 0px;
+         @include adaptive_padding_bottom(40, 30);
+      }
+   }
+   &__item:last-child {
+      padding: 0px;
+      @media (max-width: 458px) {
+         padding-bottom: 0px;
+      }
+   }
+   &__item:nth-child(5) {
+      @media (max-width: 711px) {
+         @include adaptive_padding_top(30, 15);
+      }
+      @media (max-width: 458px) {
+         padding: 0px;
+      }
+   }
+   &__item:nth-child(4) {
+      @media (max-width: 530px) {
+         @include adaptive_padding_top(30, 15);
+      }
+      @media (max-width: 458px) {
+         padding-top: 0px;
+      }
+   }
+
+   &__title {
+      color: #ffffff;
+      font-family: "Font Awesome 5 Brands Regular";
+      font-size: 26px;
+      font-weight: 400;
+      flex: 1 1 auto;
+      @media (max-width: 458px) {
+         @include adaptive_padding_bottom(25, 15);
+      }
+   }
+   &__text {
+      max-width: 244px;
+      @include adaptive_line_height(24, 16);
+      margin: 0 auto;
+   }
+   &__text,
+   &__link {
+      color: #ffffff;
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: 400;
+   }
+
+   &__subtitle {
+      color: #ffffff;
+      font-family: Roboto;
+      font-size: 18px;
+      font-weight: 400;
+      @include adaptive_padding_bottom(47, 15);
+   }
+
+   &__list {
+   }
+   &__list li {
+      @include adaptive_padding_bottom(24, 10);
+   }
+   &__list li:last-child {
+      padding: 0px;
+   }
+
+   &__link {
+      transition: all 0.5s ease 0s;
+      &_1 {
+         background: url("../../img/restaurant/01.png") no-repeat;
+         padding-left: 30px;
+      }
+
+      &_2 {
+         background: url("../../img/restaurant/02.png") no-repeat;
+         padding-left: 30px;
+      }
+
+      &_3 {
+         background: url("../../img/restaurant/03.png") no-repeat;
+         padding-left: 30px;
+      }
+   }
+   &__link:hover {
+      color: #e01e5b;
+      transition: all 0.5s ease 0s;
+   }
+}
+.container {
+}
+
+.footer {
+   background: #16171b;
+   &__row {
+      display: flex;
+      justify-content: space-between;
+      @include adaptive_padding_top(42, 20);
+      @include adaptive_padding_bottom(42, 20);
+      align-items: center;
+      @media (max-width: 767px) {
+         flex-direction: column;
+      }
+   }
+
+   &__text,
+   &__link {
+      opacity: 0.5;
+      color: #fff;
+      font-family: Roboto;
+      @include adaptive_font(16, 12);
+      font-weight: 400;
+   }
+   &__link:hover {
+      opacity: 1;
+      transition: all 0.5s ease 0s;
+   }
+
+   &__list {
+      display: flex;
+      align-items: center;
+   }
+   &__list:nth-child(2) {
+      @media (max-width: 767px) {
+         @include adaptive_padding_top(20, 10);
+         @include adaptive_padding_bottom(20, 10);
+      }
+   }
+   &__list li {
+      @include adaptive_padding_right(21, 10);
+   }
+   &__list li:last-child {
+      padding: 0px;
+   }
+
+   &__link {
+      transition: all 0.5s ease 0s;
+   }
+}
+.container {
+}
